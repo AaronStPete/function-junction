@@ -126,15 +126,6 @@ const isVowel = (entry) => {
   console.log(answer)
   return answer;
   }
-
-  //turn (input) into an array
-  //define consonants
-  //build loop based on (input).length to
-  //test whether (input)==consonant and
-  //if true, ((input)+o+(input)) => push to array
-  //else => push to array
-  //combine array into a string
-  //return the new string
 }
 
 
@@ -146,6 +137,10 @@ const isVowel = (entry) => {
  * reverse("skoob") should return the
  * string "books".
  */
+
+const reverse = (input) => {
+  return input.split("").reverse().join("")
+}
 
 // ...
 
