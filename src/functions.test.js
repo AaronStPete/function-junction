@@ -4,6 +4,14 @@
  * construct available in Javascript.
  */
 
+const max = (x,y) => {
+  if (x >= y) {
+    return x;
+  } else { 
+    return y;
+  }
+}
+
 // ...
 
 /**
@@ -11,12 +19,34 @@
  * numbers as arguments and returns the largest of them.
  */
 
+ const maxOfThree = (x,y,z) => {
+  //  if ((((x >= y) && ( x >= z))) || ((x>=y) && z===NaN) || ((x>=z) && y===NaN)){
+  //    return x;
+  //  } else if ((((y >= x) && ( y>= z)))  || ((y>=x) && z===NaN) || ((y>=z) && x===NaN)){
+  //    return y;
+  //  } else if ((((z >= x) && (z>= y)))  || ((z>=y) && x===NaN) || ((z>=x) && y===NaN)) {
+  //    return z;
+  //  }
+  if ((x > y) && (x>z)) {
+    return x;
+  } else if ((y>x)&&(y>z)) { 
+    return y;
+  } else {
+    return z;
+  }
+
+   }
+ 
 // ...
 
 /*
  * Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
+const sum = (x,y) => {
+  return x + y;
+}
+
 
 // ...
 
@@ -25,12 +55,28 @@
  * all the numbers in an array.
  */
 
+const sumOfArray = (array) => {
+  let currentSum = 0;
+  for (let i = 0 ; i<array.length ; i++) {
+    currentSum += array[i]
+  }
+  return  currentSum;
+}
+
 // ...
 
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
+const isVowel = (entry) => {
+  if ((entry == "a") || (entry =="e") ||(entry == "i") || (entry =="o" )||(entry == "u") ||(entry == "y") || (entry =="A") || (entry =="E") ||(entry == "I") || (entry =="O") ||(entry == "U") || (entry =="Y")) {
+    return true
+  } else {
+    return false
+  }
+}
+
 
 // ...
 
@@ -42,6 +88,10 @@
   * For example, rovarspraket("this is fun") should
   * return the string "tothohisos isos fofunon".
   */
+const rovarspraket = (word) => {
+  
+}
+
 
 // ...
 
