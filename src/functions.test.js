@@ -88,8 +88,53 @@ const isVowel = (entry) => {
   * For example, rovarspraket("this is fun") should
   * return the string "tothohisos isos fofunon".
   */
-const rovarspraket = (word) => {
-  
+ const rovarspraket = (phrase) => {
+
+  if(typeof phrase == 'number'){
+    let convertedPhrase = phrase.toString()
+    return convertedPhrase;
+  }
+  else{
+  // list of consonants
+  const consonants = "bcdfghjklmnpqrstvwxz";
+  //taking the passed string and splitting it
+ 
+  let newString = phrase.split('');
+
+  // ('t', 'h','i, ...')
+  // loop through the string to identify consonants
+  let b = [];
+
+  for (var i = 0; i < phrase.length; i++) {
+    //if true take each element and apply new string
+    if (consonants.includes(newString[i])) {
+      let newText = newString[i] + "o" + newString[i];
+      // console.log(newString[i])
+      b.push(newText);
+    }
+    else {
+      // console.log(newString[i]);
+      b.push(newString[i]);
+      
+    }
+  }
+  console.log(b)
+  console.log(typeof b)
+ 
+  console.log(b)
+  let answer =  b.join("");
+  console.log(answer)
+  return answer;
+  }
+
+  //turn (input) into an array
+  //define consonants
+  //build loop based on (input).length to
+  //test whether (input)==consonant and
+  //if true, ((input)+o+(input)) => push to array
+  //else => push to array
+  //combine array into a string
+  //return the new string
 }
 
 
@@ -110,6 +155,23 @@ const rovarspraket = (word) => {
   *
   * i.e. findLongestWord("book dogs") should return "book"
   */
+
+  const findLongestWord = (input) => {
+  let iArray = input.split(" ");
+  let longest = ""
+  for (let i=0 ; i < iArray.length ; i++) {
+    // console.log("the input length is: " + input.length)
+    // console.log(longest)
+    // console.log(iArray[i])
+    if (longest.length < iArray[i].length) {
+      longest = iArray[i]
+      // console.log("last" + longest)
+      // console.log("last" + iArray[i])
+    }
+  }
+  return longest
+  console.log(longest)
+  }
 
 // ...
 
@@ -174,7 +236,9 @@ test('reverse()', (t) => {
 
 test('findLongestWord()', (t) => {
   t.is(findLongestWord('book dogs'), 'book')
-  t.is(findLongestWord('everything'), 'life the universe and everything')
+  t.is(findLongestWord('life the universe and everything'), 'everything')
+  // this test is broken....
+  // t.is(findLongestWord('everything'), 'life the universe and everything')
 })
 
 /* eslint-enable */
